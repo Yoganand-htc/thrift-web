@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>Thrift module: intellify</title></head><body>
+<div class="container-fluid">
+<h1>Thrift module: intellify</h1>
+<table class="table-bordered table-striped table-condensed"><thead><th>Module</th><th>Services</th><th>Data types</th><th>Constants</th></thead>
+<tr>
+<td>intellify</td><td><a href="#Svc_JavaSensor">JavaSensor</a><br/>
+<ul>
+<li><a href="#Fn_JavaSensor_measure">measure</a></li>
+</ul>
+</td>
+<td><a href="#Struct_CaliperEvent">CaliperEvent</a><br/>
+<a href="#Struct_InvalidEvent">InvalidEvent</a><br/>
+</td>
+<td></code></td>
+</tr></table>
+<hr/><h2 id="Structs">Data structures</h2>
+<div class="definition"><h3 id="Struct_CaliperEvent">Struct: CaliperEvent</h3>
+<table class="table-bordered table-striped table-condensed"><thead><th>Key</th><th>Field</th><th>Type</th><th>Description</th><th>Requiredness</th><th>Default value</th></thead>
+<tr><td>1</td><td>name</td><td><code>string</code></td><td></td><td>default</td><td></td></tr>
+<tr><td>2</td><td>value</td><td><code>string</code></td><td></td><td>default</td><td></td></tr>
+</table><br/></div><div class="definition"><h3 id="Struct_InvalidEvent">Exception: InvalidEvent</h3>
+<table class="table-bordered table-striped table-condensed"><thead><th>Key</th><th>Field</th><th>Type</th><th>Description</th><th>Requiredness</th><th>Default value</th></thead>
+<tr><td>1</td><td>what</td><td><code>i32</code></td><td></td><td>default</td><td></td></tr>
+<tr><td>2</td><td>why</td><td><code>string</code></td><td></td><td>default</td><td></td></tr>
+</table><br/>Structs can also be exceptions, if they are nasty.
+<br/></div><hr/><h2 id="Services">Services</h2>
+<h3 id="Svc_JavaSensor">Service: JavaSensor</h3>
+<div class="definition"><h4 id="Fn_JavaSensor_measure">Function: JavaSensor.measure</h4>
+<pre><code>string</code> measure(<code><a href="intellify.html#Struct_CaliperEvent">CaliperEvent</a></code> ce)
+    throws <code><a href="intellify.html#Struct_InvalidEvent">InvalidEvent</a></code>
+</pre></div></div></body></html>
