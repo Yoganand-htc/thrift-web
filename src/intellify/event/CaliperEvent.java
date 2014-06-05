@@ -4,7 +4,7 @@
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
-package intellify.sensor;
+package intellify.event;
 
 import org.apache.thrift.scheme.IScheme;
 import org.apache.thrift.scheme.SchemeFactory;
@@ -35,8 +35,8 @@ import org.slf4j.LoggerFactory;
 public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, CaliperEvent._Fields>, java.io.Serializable, Cloneable, Comparable<CaliperEvent> {
   private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("CaliperEvent");
 
-  private static final org.apache.thrift.protocol.TField NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("name", org.apache.thrift.protocol.TType.STRING, (short)1);
-  private static final org.apache.thrift.protocol.TField VALUE_FIELD_DESC = new org.apache.thrift.protocol.TField("value", org.apache.thrift.protocol.TType.STRING, (short)2);
+  private static final org.apache.thrift.protocol.TField EVENT_FIELD_DESC = new org.apache.thrift.protocol.TField("event", org.apache.thrift.protocol.TType.STRING, (short)1);
+  private static final org.apache.thrift.protocol.TField DATA_FIELD_DESC = new org.apache.thrift.protocol.TField("data", org.apache.thrift.protocol.TType.STRING, (short)2);
 
   private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
   static {
@@ -44,13 +44,13 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
     schemes.put(TupleScheme.class, new CaliperEventTupleSchemeFactory());
   }
 
-  public String name; // required
-  public String value; // required
+  public String event; // required
+  public String data; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-    NAME((short)1, "name"),
-    VALUE((short)2, "value");
+    EVENT((short)1, "event"),
+    DATA((short)2, "data");
 
     private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
 
@@ -65,10 +65,10 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
      */
     public static _Fields findByThriftId(int fieldId) {
       switch(fieldId) {
-        case 1: // NAME
-          return NAME;
-        case 2: // VALUE
-          return VALUE;
+        case 1: // EVENT
+          return EVENT;
+        case 2: // DATA
+          return DATA;
         default:
           return null;
       }
@@ -112,9 +112,9 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
   public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
     Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-    tmpMap.put(_Fields.NAME, new org.apache.thrift.meta_data.FieldMetaData("name", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.EVENT, new org.apache.thrift.meta_data.FieldMetaData("event", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-    tmpMap.put(_Fields.VALUE, new org.apache.thrift.meta_data.FieldMetaData("value", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.DATA, new org.apache.thrift.meta_data.FieldMetaData("data", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     metaDataMap = Collections.unmodifiableMap(tmpMap);
     org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(CaliperEvent.class, metaDataMap);
@@ -124,23 +124,23 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
   }
 
   public CaliperEvent(
-    String name,
-    String value)
+    String event,
+    String data)
   {
     this();
-    this.name = name;
-    this.value = value;
+    this.event = event;
+    this.data = data;
   }
 
   /**
    * Performs a deep copy on <i>other</i>.
    */
   public CaliperEvent(CaliperEvent other) {
-    if (other.isSetName()) {
-      this.name = other.name;
+    if (other.isSetEvent()) {
+      this.event = other.event;
     }
-    if (other.isSetValue()) {
-      this.value = other.value;
+    if (other.isSetData()) {
+      this.data = other.data;
     }
   }
 
@@ -150,73 +150,73 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
 
   @Override
   public void clear() {
-    this.name = null;
-    this.value = null;
+    this.event = null;
+    this.data = null;
   }
 
-  public String getName() {
-    return this.name;
+  public String getEvent() {
+    return this.event;
   }
 
-  public CaliperEvent setName(String name) {
-    this.name = name;
+  public CaliperEvent setEvent(String event) {
+    this.event = event;
     return this;
   }
 
-  public void unsetName() {
-    this.name = null;
+  public void unsetEvent() {
+    this.event = null;
   }
 
-  /** Returns true if field name is set (has been assigned a value) and false otherwise */
-  public boolean isSetName() {
-    return this.name != null;
+  /** Returns true if field event is set (has been assigned a value) and false otherwise */
+  public boolean isSetEvent() {
+    return this.event != null;
   }
 
-  public void setNameIsSet(boolean value) {
+  public void setEventIsSet(boolean value) {
     if (!value) {
-      this.name = null;
+      this.event = null;
     }
   }
 
-  public String getValue() {
-    return this.value;
+  public String getData() {
+    return this.data;
   }
 
-  public CaliperEvent setValue(String value) {
-    this.value = value;
+  public CaliperEvent setData(String data) {
+    this.data = data;
     return this;
   }
 
-  public void unsetValue() {
-    this.value = null;
+  public void unsetData() {
+    this.data = null;
   }
 
-  /** Returns true if field value is set (has been assigned a value) and false otherwise */
-  public boolean isSetValue() {
-    return this.value != null;
+  /** Returns true if field data is set (has been assigned a value) and false otherwise */
+  public boolean isSetData() {
+    return this.data != null;
   }
 
-  public void setValueIsSet(boolean value) {
+  public void setDataIsSet(boolean value) {
     if (!value) {
-      this.value = null;
+      this.data = null;
     }
   }
 
   public void setFieldValue(_Fields field, Object value) {
     switch (field) {
-    case NAME:
+    case EVENT:
       if (value == null) {
-        unsetName();
+        unsetEvent();
       } else {
-        setName((String)value);
+        setEvent((String)value);
       }
       break;
 
-    case VALUE:
+    case DATA:
       if (value == null) {
-        unsetValue();
+        unsetData();
       } else {
-        setValue((String)value);
+        setData((String)value);
       }
       break;
 
@@ -225,11 +225,11 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
 
   public Object getFieldValue(_Fields field) {
     switch (field) {
-    case NAME:
-      return getName();
+    case EVENT:
+      return getEvent();
 
-    case VALUE:
-      return getValue();
+    case DATA:
+      return getData();
 
     }
     throw new IllegalStateException();
@@ -242,10 +242,10 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
     }
 
     switch (field) {
-    case NAME:
-      return isSetName();
-    case VALUE:
-      return isSetValue();
+    case EVENT:
+      return isSetEvent();
+    case DATA:
+      return isSetData();
     }
     throw new IllegalStateException();
   }
@@ -263,21 +263,21 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
     if (that == null)
       return false;
 
-    boolean this_present_name = true && this.isSetName();
-    boolean that_present_name = true && that.isSetName();
-    if (this_present_name || that_present_name) {
-      if (!(this_present_name && that_present_name))
+    boolean this_present_event = true && this.isSetEvent();
+    boolean that_present_event = true && that.isSetEvent();
+    if (this_present_event || that_present_event) {
+      if (!(this_present_event && that_present_event))
         return false;
-      if (!this.name.equals(that.name))
+      if (!this.event.equals(that.event))
         return false;
     }
 
-    boolean this_present_value = true && this.isSetValue();
-    boolean that_present_value = true && that.isSetValue();
-    if (this_present_value || that_present_value) {
-      if (!(this_present_value && that_present_value))
+    boolean this_present_data = true && this.isSetData();
+    boolean that_present_data = true && that.isSetData();
+    if (this_present_data || that_present_data) {
+      if (!(this_present_data && that_present_data))
         return false;
-      if (!this.value.equals(that.value))
+      if (!this.data.equals(that.data))
         return false;
     }
 
@@ -297,22 +297,22 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
 
     int lastComparison = 0;
 
-    lastComparison = Boolean.valueOf(isSetName()).compareTo(other.isSetName());
+    lastComparison = Boolean.valueOf(isSetEvent()).compareTo(other.isSetEvent());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetName()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.name, other.name);
+    if (isSetEvent()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.event, other.event);
       if (lastComparison != 0) {
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetValue()).compareTo(other.isSetValue());
+    lastComparison = Boolean.valueOf(isSetData()).compareTo(other.isSetData());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetValue()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.value, other.value);
+    if (isSetData()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.data, other.data);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -337,19 +337,19 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
     StringBuilder sb = new StringBuilder("CaliperEvent(");
     boolean first = true;
 
-    sb.append("name:");
-    if (this.name == null) {
+    sb.append("event:");
+    if (this.event == null) {
       sb.append("null");
     } else {
-      sb.append(this.name);
+      sb.append(this.event);
     }
     first = false;
     if (!first) sb.append(", ");
-    sb.append("value:");
-    if (this.value == null) {
+    sb.append("data:");
+    if (this.data == null) {
       sb.append("null");
     } else {
-      sb.append(this.value);
+      sb.append(this.data);
     }
     first = false;
     sb.append(")");
@@ -395,18 +395,18 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
           break;
         }
         switch (schemeField.id) {
-          case 1: // NAME
+          case 1: // EVENT
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-              struct.name = iprot.readString();
-              struct.setNameIsSet(true);
+              struct.event = iprot.readString();
+              struct.setEventIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 2: // VALUE
+          case 2: // DATA
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-              struct.value = iprot.readString();
-              struct.setValueIsSet(true);
+              struct.data = iprot.readString();
+              struct.setDataIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -426,14 +426,14 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
       struct.validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
-      if (struct.name != null) {
-        oprot.writeFieldBegin(NAME_FIELD_DESC);
-        oprot.writeString(struct.name);
+      if (struct.event != null) {
+        oprot.writeFieldBegin(EVENT_FIELD_DESC);
+        oprot.writeString(struct.event);
         oprot.writeFieldEnd();
       }
-      if (struct.value != null) {
-        oprot.writeFieldBegin(VALUE_FIELD_DESC);
-        oprot.writeString(struct.value);
+      if (struct.data != null) {
+        oprot.writeFieldBegin(DATA_FIELD_DESC);
+        oprot.writeString(struct.data);
         oprot.writeFieldEnd();
       }
       oprot.writeFieldStop();
@@ -454,18 +454,18 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
     public void write(org.apache.thrift.protocol.TProtocol prot, CaliperEvent struct) throws org.apache.thrift.TException {
       TTupleProtocol oprot = (TTupleProtocol) prot;
       BitSet optionals = new BitSet();
-      if (struct.isSetName()) {
+      if (struct.isSetEvent()) {
         optionals.set(0);
       }
-      if (struct.isSetValue()) {
+      if (struct.isSetData()) {
         optionals.set(1);
       }
       oprot.writeBitSet(optionals, 2);
-      if (struct.isSetName()) {
-        oprot.writeString(struct.name);
+      if (struct.isSetEvent()) {
+        oprot.writeString(struct.event);
       }
-      if (struct.isSetValue()) {
-        oprot.writeString(struct.value);
+      if (struct.isSetData()) {
+        oprot.writeString(struct.data);
       }
     }
 
@@ -474,12 +474,12 @@ public class CaliperEvent implements org.apache.thrift.TBase<CaliperEvent, Calip
       TTupleProtocol iprot = (TTupleProtocol) prot;
       BitSet incoming = iprot.readBitSet(2);
       if (incoming.get(0)) {
-        struct.name = iprot.readString();
-        struct.setNameIsSet(true);
+        struct.event = iprot.readString();
+        struct.setEventIsSet(true);
       }
       if (incoming.get(1)) {
-        struct.value = iprot.readString();
-        struct.setValueIsSet(true);
+        struct.data = iprot.readString();
+        struct.setDataIsSet(true);
       }
     }
   }
