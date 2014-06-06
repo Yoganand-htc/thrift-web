@@ -13,8 +13,14 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.apache.log4j.Logger;
+
+
+
+
 @Path("/javasensor")
 public class JavaSensorRC {
+	public static final Logger LOG = Logger.getLogger(JavaSensorRC.class);
 	public static JavaSensor server = null;
 	static {
 		server = new JavaSensorProcessor();
@@ -24,7 +30,7 @@ public class JavaSensorRC {
 	@Path("/get/{param}")
 	public Response getMsg(@PathParam("param") String msg) {
 		try {
-			System.out.println("Entering getMsg method...");
+			LOG.info("Entering getMsg method...");
 			String output = "Java Sensor say : " + perform("caliperEvent", msg);
 			return Response.status(200).entity(output).build();
 		} catch (Exception x) {
@@ -38,7 +44,7 @@ public class JavaSensorRC {
 	@Produces(MediaType.APPLICATION_JSON)
 	public CaliperEvent getJSON(@PathParam("param") String msg) {
 		try {
-			System.out.println("Entering getJSON method...");
+			LOG.info("Entering getJSON method...");
 			CaliperEvent ce = new CaliperEvent();
 			ce.setEvent("caliperEvent");
 			ce.setData(msg);
@@ -56,7 +62,7 @@ public class JavaSensorRC {
      @Consumes(MediaType.APPLICATION_JSON)
      public Response postJSON( CaliperEvent event ) {
 		 try {
-			System.out.println("Entering postJSON method...");
+			 LOG.info("Entering postJSON method...");
 			server.measure(event);
 			String output = "JSON Object received from client :" + event.toString();
 			return Response.status(200).entity(output).build();
